@@ -37,8 +37,9 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      # Scan Docker image
+      # Scan Docker image (not for release builds since we will have multiple tags)
       - name: Scan Docker image
+        if: github.event_name != 'release'
         uses: aquasecurity/trivy-action@4b9b6fb4ef28b31450391a93ade098bb00de584e # renovate: tag=0.3.0
         with:
           image-ref: ${{ steps.meta.outputs.tags }}
@@ -47,8 +48,8 @@ jobs:
 
       # Publish scan report to GitHub
       - name: Publish scan report to GitHub        
+        if: ${{ github.event_name != 'release' && always() }}
         uses: github/codeql-action/upload-sarif@a6611b86918424d4588efe7d6dbe18fe52d42518 # renovate: tag=v1
-        if: ${{ always() }}
         with:
           sarif_file: trivy-results.sarif
 
