@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
 
       # Extract metadata (tags, labels) for Docker
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@69f6fc9d46f2f8bf0d5491e4aabe0bb8c6a4678a # renovate: tag=v4
+        uses: docker/metadata-action@69f6fc9d46f2f8bf0d5491e4aabe0bb8c6a4678a # renovate: tag=v4.0.1
         with:
           images: swissgrc/azure-pipelines-markdownlint
           tags: |
@@ -30,7 +30,7 @@ jobs:
 
       # Build Docker image with Buildx
       - name: Build Docker image
-        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # renovate: tag=v3
+        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # renovate: tag=v3.0.0
         with:
           context: .
           push: false
@@ -40,7 +40,7 @@ jobs:
       # Scan Docker image (not for release builds since we will have multiple tags)
       - name: Scan Docker image
         if: github.event_name != 'release'
-        uses: aquasecurity/trivy-action@4b9b6fb4ef28b31450391a93ade098bb00de584e # renovate: tag=0.3.0
+        uses: aquasecurity/trivy-action@0105373003c89c494a3f436bd5efc57f3ac1ca20 # tag=0.5.1
         with:
           image-ref: ${{ steps.meta.outputs.tags }}
           format: 'sarif'
@@ -49,21 +49,21 @@ jobs:
       # Publish scan report to GitHub
       - name: Publish scan report to GitHub        
         if: ${{ github.event_name != 'release' && always() }}
-        uses: github/codeql-action/upload-sarif@a6611b86918424d4588efe7d6dbe18fe52d42518 # renovate: tag=v1
+        uses: github/codeql-action/upload-sarif@3e7e3b32d0fb8283594bb0a76cc60a00918b0969 # tag=v2.1.16
         with:
           sarif_file: trivy-results.sarif
 
       # Login to Docker registry if not PR build
       - name: Log in to Docker Hub
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@49ed152c8eca782a232dede0303416e8f356c37b # renovate: tag=v2
+        uses: docker/login-action@49ed152c8eca782a232dede0303416e8f356c37b # renovate: tag=v2.0.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Publish Docker image for CI builds if not PR build
       - name: Push container image
-        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # renovate: tag=v3
+        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # renovate: tag=v3.0.0
         if: github.event_name != 'pull_request'
         with:
           context: .
