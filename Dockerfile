@@ -1,4 +1,4 @@
-FROM node:18.6.0-bullseye
+FROM node:18.7.0-bullseye
 
 LABEL org.opencontainers.image.vendor="Swiss GRC AG"
 LABEL org.opencontainers.image.authors="Swiss GRC AG <opensource@swissgrc.com>"
@@ -11,7 +11,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # markdownlint-cli
 
 # renovate: datasource=npm depName=markdownlint-cli
-ENV MARKDOWNLINT_VERSION=0.32.1
+ENV MARKDOWNLINT_VERSION=0.32.2
 
 RUN npm install -g markdownlint-cli@${MARKDOWNLINT_VERSION} && \
   npm cache clean --force && \
