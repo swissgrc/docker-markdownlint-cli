@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # renovate: datasource=npm depName=markdownlint-cli
 ENV MARKDOWNLINT_VERSION=0.33.0
 
-RUN npm install -g markdownlint-cli@${MARKDOWNLINT_VERSION} && \
+RUN npm install -g markdownlint-cli@${MARKDOWNLINT_VERSION} --ignore-scripts && \
   npm cache clean --force && \
   # Smoke test
   markdownlint --version
