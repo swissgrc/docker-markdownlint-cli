@@ -32,7 +32,7 @@ The following example shows the container used for linting the repository:
 | Tag      | Description                                                                                       | Base Image                 | Markdownlint-Cli | Size                                                                                                                                  |
 |----------|---------------------------------------------------------------------------------------------------|----------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | latest   | Latest stable release (from `main` branch)                                                        | node:20.10.0-bookworm-slim | 0.38.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/latest?style=flat-square)   |
-| unstable | Latest unstable release (from `develop` branch)                                                   | node:20.10.0-bookworm-slim | 0.38.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/unstable?style=flat-square) |
+| unstable | Latest unstable release (from `develop` branch)                                                   | node:20.11.0-bookworm-slim | 0.39.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/unstable?style=flat-square) |
 | 0.31.1   | [markdownlint-cli 0.31.1](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.31.1) | node:18.4.0-bullseye       | 0.31.1           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.31.1?style=flat-square)   |
 | 0.32.0   | [markdownlint-cli 0.32.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.32.0) | node:18.6.0-bullseye       | 0.32.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.32.0?style=flat-square)   |
 | 0.32.1   | [markdownlint-cli 0.32.1](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.32.1) | node:18.6.0-bullseye       | 0.32.1           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.32.1?style=flat-square)   |
@@ -43,6 +43,7 @@ The following example shows the container used for linting the repository:
 | 0.36.0   | [markdownlint-cli 0.36.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.36.0) | node:20.5.1-bookworm-slim  | 0.36.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.36.0?style=flat-square)   |
 | 0.37.0   | [markdownlint-cli 0.37.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.37.0) | node:20.7.0-bookworm-slim  | 0.37.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.37.0?style=flat-square)   |
 | 0.38.0   | [markdownlint-cli 0.38.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.38.0) | node:20.10.0-bookworm-slim | 0.38.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.38.0?style=flat-square)   |
+| 0.39.0   | [markdownlint-cli 0.39.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.39.0) | node:20.11.0-bookworm-slim | 0.39.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.39.0?style=flat-square)   |
 <!-- markdownlint-restore -->
 
 ### Configuration
@@ -51,7 +52,7 @@ These environment variables are supported:
 
 | Environment variable   | Default value        | Description                                                      |
 |------------------------|----------------------|------------------------------------------------------------------|
-| MARKDOWNLINT_VERSION   | `0.38.0`             | Version of markdownlint-cli installed in the image.              |
+| MARKDOWNLINT_VERSION   | `0.39.0`             | Version of markdownlint-cli installed in the image.              |
 
 [markdownlint]: https://github.com/igorshubovych/markdownlint-cli
 [Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
