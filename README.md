@@ -49,3 +49,6 @@ The following example shows the container used for linting the repository:
 | 0.42.0   | [markdownlint-cli 0.42.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.42.0) | node:20.17.0-bookworm-slim | 0.42.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.42.0?style=flat-square)   |
 | 0.43.0   | [markdownlint-cli 0.43.0](https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.42.0) | node:22.11.0-bookworm-slim | 0.43.0           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-markdownlint/0.43.0?style=flat-square)   |
 <!-- markdownlint-restore -->
+
+[markdownlint]: https://github.com/igorshubovych/markdownlint-cli
+[Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
