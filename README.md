@@ -26,7 +26,8 @@ The following example shows the container used for linting the repository:
       target: swissgrc/azure-pipelines-markdownlint:latest
 ```
 ### Included Software
-- Markdownlint-Cli
+- Node.js
+- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
 ### Tags
 
